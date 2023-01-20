@@ -1,4 +1,6 @@
-* {
+*,
+::after,
+::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -6,6 +8,8 @@
 
 :root {
   --grey: rgba(0, 0, 0, 0.5);
+  --overlay: rgba(0, 0, 0, 0.3);
+  --d-overlay: rgba(0, 0, 0, 0.25);
   --black: #000;
   --red: #992323;
   --white: #fff;
@@ -15,9 +19,34 @@
 
 body {
   background-color: var(--grey);
+  color: var(--white);
 }
 
+.main-content-container {
+  /* margin-top: 7.5em; */
+  background-image: url("https://plus.unsplash.com/premium_photo-1661713795272-6ab29ccfbbf2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8bXVzaWMlMjByb2NrJTIwYmFuZCUyMGltYWdlc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 80vh;
+  position: relative;
+}
+
+.main-content-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: var(--overlay);
+}
+
+/* .main-content-container > * {
+  position: relative;
+  z-index: 0;
+} */
+
 .main-container-header {
+  /* padding-top: 2em; */
   position: fixed;
   top: 0;
   left: 0;
@@ -27,7 +56,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 1em;
-  background-color: var(--black);
+  background-color: var(--d-overlay);
   color: var(--white);
 }
 
@@ -65,7 +94,7 @@ body {
 
 .main-nav-container {
   position: absolute;
-  top: 0;
+  /* top: 50%; */
   left: 0;
   right: 0;
   z-index: 9999;
@@ -73,7 +102,7 @@ body {
   padding: 1em;
   border: 1px solid silver;
   transform-origin: top;
-  transform: translateY(-50%);
+  transform: translate(-100%, 50%);
   /* display: none; */
   transition: all 0.5s ease-in;
   background-color: var(--red);
@@ -85,5 +114,41 @@ body {
 }
 
 .display {
-  transform: translateY(75%);
+  transform: translate(0%, 50%);
+}
+
+.main-section-container {
+  display: flex;
+  gap: 1.5em 1.5em;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 10em;
+  position: relative;
+  z-index: 99;
+}
+
+.main-section-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 10;
+  font-size: 2.5em;
+}
+
+.main-button-container {
+  padding-inline: 2.5em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* place-items: center; */
+  grid-gap: 1em 1em;
+  width: 100%;
+  height: auto;
+}
+
+.main-button {
+  width: auto;
+  height: 100%;
+  padding: 0.5em;
+  border: 1px solid silver;
+  border-radius: 1em;
 }
