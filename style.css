@@ -136,19 +136,23 @@ body {
 }
 
 .main-button-container {
-  padding-inline: 2.5em;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  /* place-items: center; */
   grid-gap: 1em 1em;
   width: 100%;
   height: auto;
 }
 
 .main-button {
-  width: auto;
-  height: 100%;
+  width: 15em;
+  height: 4em;
   padding: 0.5em;
   border: 1px solid silver;
   border-radius: 1em;
+}
+
+@media only screen and (max-width: 420px) {
+  .main-button-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
