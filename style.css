@@ -211,16 +211,19 @@ body {
 
 .band-album-discussion-browse-album-button-container {
   margin-inline: var(--page-margin);
+  /* width: 100%; */
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  position: relative;
+  z-index: 5;
 }
 
 .band-album-discussion-album-button {
   width: 15em;
   height: 4em;
-  position: relative;
-  z-index: 5;
+  border: 1px solid silver;
+  border-radius: 1em;
 }
 
 .band-album-discussion-image-content-container {
@@ -270,7 +273,7 @@ body {
 
 .band-album-discussion-image-text-container {
   position: absolute;
-  color: var(--black);
+  color: var(--white);
   z-index: 999;
   top: 0;
   left: 0;
