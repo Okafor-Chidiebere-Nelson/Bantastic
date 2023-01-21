@@ -17,6 +17,8 @@
   --v-f-s: 2.5em;
   --page-margin: 2.5em;
   --page-padding: 2.5em;
+  --silver: #c0c0c0;
+  --transparent: rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -61,6 +63,7 @@ body {
   padding: 1em;
   background-color: var(--d-overlay);
   color: var(--white);
+  backdrop-filter: blur(10px);
 }
 
 .header-utility-container {
@@ -170,7 +173,7 @@ body {
 }
 
 .band-album-discussion-browse-album-button-container {
-  margin-bottom: 15em;
+  margin-bottom: 9em;
 }
 
 .band-album-discussion-section-container {
@@ -178,12 +181,27 @@ body {
   color: var(--white);
   padding-block-start: 5.5em;
   min-height: 140vh;
-  /* height: 200vh; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  gap: 2em 2em;
+  position: relative;
+}
+
+.band-album-discussion-section-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--grey);
+  z-index: 3;
 }
 
 .band-album-discussion-title-container,
 .band-album-discussion-paragraph-container {
   margin-inline: var(--page-margin);
+  position: relative;
+  z-index: 5;
 }
 
 /* .band-album-discussion-title,
@@ -201,6 +219,8 @@ body {
 .band-album-discussion-album-button {
   width: 15em;
   height: 4em;
+  position: relative;
+  z-index: 5;
 }
 
 .band-album-discussion-image-content-container {
@@ -208,19 +228,39 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 15em;
+  padding-bottom: 9em;
+  margin-bottom: 4.5em;
+  height: 15em;
+  width: 15em;
+}
+
+.band-album-discussion-image-content-container::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  z-index: 5;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  background-color: var(--silver);
 }
 
 .band-album-discussion-image-container {
-  height: 15em;
-  width: 15em;
+  height: 100%;
+  width: 100%;
   position: absolute;
+  border-radius: 2em;
+}
+
+.band-album-discussion-image {
+  width: 100%;
+  height: 100%;
+  border: inherit;
+  border-radius: inherit;
 }
 
 .hand-from-sea {
   z-index: 40;
-  height: 12em;
-  width: 12em;
   transform: rotate(-15deg);
 }
 
@@ -228,15 +268,13 @@ body {
   z-index: 0;
 }
 
-.band-album-discussion-image-text {
+.band-album-discussion-image-text-container {
   position: absolute;
   color: var(--black);
   z-index: 999;
-}
-
-.band-album-discussion-image {
-  width: 100%;
-  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 1em;
 }
 
 @media only screen and (max-width: 420px) {
