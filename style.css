@@ -15,11 +15,14 @@
   --white: #fff;
   --font-size: 1.5em;
   --v-f-s: 2.5em;
+  --page-margin: 2.5em;
+  --page-padding: 2.5em;
 }
 
 body {
   background-color: var(--grey);
   color: var(--white);
+  position: relative;
 }
 
 .main-content-container {
@@ -129,6 +132,10 @@ body {
   z-index: 99;
 }
 
+.main-section-paragraph-container {
+  margin-inline: var(--page-margin);
+}
+
 .main-section-title {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 10;
@@ -141,6 +148,11 @@ body {
   grid-gap: 1em 1em;
   width: 100%;
   height: auto;
+  padding-bottom: 2em;
+}
+
+.music-play-btn-icon {
+  font-size: 2em;
 }
 
 .main-button {
@@ -149,6 +161,82 @@ body {
   padding: 0.5em;
   border: 1px solid silver;
   border-radius: 1em;
+}
+
+.music-play-btn {
+  background-color: transparent;
+  color: var(--white);
+  border: none;
+}
+
+.band-album-discussion-browse-album-button-container {
+  margin-bottom: 15em;
+}
+
+.band-album-discussion-section-container {
+  background-color: var(--black);
+  color: var(--white);
+  padding-block-start: 5.5em;
+  min-height: 140vh;
+  /* height: 200vh; */
+}
+
+.band-album-discussion-title-container,
+.band-album-discussion-paragraph-container {
+  margin-inline: var(--page-margin);
+}
+
+/* .band-album-discussion-title,
+.band-album-discussion-paragraph {
+  text-align: center;
+} */
+
+.band-album-discussion-browse-album-button-container {
+  margin-inline: var(--page-margin);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.band-album-discussion-album-button {
+  width: 15em;
+  height: 4em;
+}
+
+.band-album-discussion-image-content-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15em;
+}
+
+.band-album-discussion-image-container {
+  height: 15em;
+  width: 15em;
+  position: absolute;
+}
+
+.hand-from-sea {
+  z-index: 40;
+  height: 12em;
+  width: 12em;
+  transform: rotate(-15deg);
+}
+
+.rotating-stereo {
+  z-index: 0;
+}
+
+.band-album-discussion-image-text {
+  position: absolute;
+  color: var(--black);
+  z-index: 999;
+}
+
+.band-album-discussion-image {
+  width: 100%;
+  height: 100%;
 }
 
 @media only screen and (max-width: 420px) {
