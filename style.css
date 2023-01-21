@@ -123,6 +123,10 @@ body {
   transform: translate(0%, 50%);
 }
 
+.main-nav-list-item-icon-span {
+  margin-inline-end: 1em;
+}
+
 .main-section-container {
   display: flex;
   gap: 1.5em 1.5em;
